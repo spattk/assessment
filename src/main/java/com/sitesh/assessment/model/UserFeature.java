@@ -9,16 +9,16 @@ public class UserFeature {
     @Id
     @GeneratedValue
     private int id;
-    private String feature;
+    private String featureName;
     private String email;
     private boolean enable;
 
     public UserFeature() {
     }
 
-    public UserFeature(int id, String feature, String email, boolean enable) {
+    public UserFeature(int id, String featureName, String email, boolean enable) {
         this.id = id;
-        this.feature = feature;
+        this.featureName = featureName;
         this.email = email;
         this.enable = enable;
     }
@@ -31,12 +31,12 @@ public class UserFeature {
         this.id = id;
     }
 
-    public String getFeature() {
-        return feature;
+    public String getFeatureName() {
+        return featureName;
     }
 
-    public void setFeature(String feature) {
-        this.feature = feature;
+    public void setFeatureName(String featureName) {
+        this.featureName = featureName;
     }
 
     public String getEmail() {

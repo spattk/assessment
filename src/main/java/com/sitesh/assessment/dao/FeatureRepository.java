@@ -5,5 +5,5 @@ import com.sitesh.assessment.model.UserFeature;
 
 public interface FeatureRepository extends JpaRepository<UserFeature, Integer> {
 
-    public UserFeature findByEmailAndFeature(String email, String feature);
+    public UserFeature findByEmailAndFeatureName(String email, String featureName);
 }

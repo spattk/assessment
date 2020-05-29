@@ -5,8 +5,6 @@ import com.sitesh.assessment.controller.FeatureService;
 import com.sitesh.assessment.dao.FeatureRepository;
 import com.sitesh.assessment.model.FeatureResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.dao.NonTransientDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -33,7 +31,7 @@ public class FeatureServiceImpl implements FeatureService {
 
     @Override
     public FeatureResponse getUserFeature(String email, String featureName) {
-        UserFeature userFeature =  featureRepository.findByEmailAndFeature(email, featureName);
+        UserFeature userFeature =  featureRepository.findByEmailAndFeatureName(email, featureName);
         FeatureResponse featureResponse = new FeatureResponse(false);
         if (userFeature != null) {
             featureResponse.setCanAccess(userFeature.isEnable());
